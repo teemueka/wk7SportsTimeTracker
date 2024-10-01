@@ -67,6 +67,10 @@ public class SportsActivities {
         }
     }
 
+    public HashMap<Double, String> getActivities() {
+        return activities;
+    }
+
     public static void main(String[] args) {
         new SportsActivities().run();
     }
