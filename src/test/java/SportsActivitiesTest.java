@@ -10,12 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SportsActivitiesTest {
     SportsActivities sportsActivities;
 
+    //Setting new sports activities before every test
     @BeforeEach
     public void setUp() {
         this.sportsActivities = new SportsActivities();
     }
 
-
+    //Testing if logging adds activities and times to the map
     @Test
     public void logTimeTest() {
         sportsActivities.logTime("Swimming", 2);
@@ -23,6 +24,7 @@ public class SportsActivitiesTest {
         assertTrue(sportsActivities.getActivities().containsValue("Swimming"));
     }
 
+    //Testing if adding multiple logs are displayed
     @Test
     void testViewActivities() {
         sportsActivities.logTime("Running", 30.0);
@@ -42,6 +44,7 @@ public class SportsActivitiesTest {
     }
 
 
+    //Testing total time with multiple logs
     @Test
     public void testGetTotalTime() {
         sportsActivities.logTime("Running", 30.0);

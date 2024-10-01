@@ -8,19 +8,25 @@ public class SportsActivities {
     private double total;
     Scanner scanner = new Scanner(System.in);
     private boolean running = true;
-    String[] options = {"0. Exit", "1. Log new activity.", "2. View logged activities.", "3. View total time spent."};
+    String[] options = {"0. Exit",
+            "1. Log new activity.",
+            "2. View logged activities.",
+            "3. View total time spent."};
 
 
+    // add given activity and time spent
     public void logTime(String activity, double time) {
         this.activities.put(time, activity);
     };
 
+    // displaying each activity and time spent
     public void viewActivities() {
         activities.forEach((key, value) -> {
             System.out.println("Activity: " + value + ", time spent: " + key);
         });
     }
 
+    // displays total time spent on the activities user has logged
     public void getTotalTime() {
         activities.forEach((key, value) -> {
             this.total += key;
@@ -29,6 +35,7 @@ public class SportsActivities {
         this.total = 0.0;
     }
 
+    // displays options for users and returns the user input
     public int getUserChoice(String[] options) {
         System.out.println("\nSelect an option:");
         for (int i = 1; i <= options.length; i++) {
@@ -39,6 +46,7 @@ public class SportsActivities {
         return choice;
     }
 
+    // runs the sportsApp until user exits
     public void run() {
         try {
             do {
